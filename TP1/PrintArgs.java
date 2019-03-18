@@ -29,5 +29,6 @@ public class PrintArgs
 }
 
 // Exercice 2 : Premier execercice
+
 // si on ne met pas d'arguments on a une erreur à l'exécution du programme
 // en gros on essaie d'accéder à une case du tableau args qui n'hexiste pas
