@@ -2,6 +2,7 @@ import java.util.GregorianCalendar;
 
 public class LeapYear
 {
+	 // return true if it is a leap year and false if not
 	public static boolean isLeapYear(int year)
 	{
 		if(year % 4 == 0 && year % 100 != 0)
@@ -12,24 +13,25 @@ public class LeapYear
 			return false;
 	}
 
+	 // return true if it is a leap year and false if not
+	 // using java.utils API GregorianCalendar
 	public static boolean isLeapYearLazy(int year)
 	{
 		GregorianCalendar calendar = new GregorianCalendar();
 		return calendar.isLeapYear(year);
 	}
 
+	 // return an int array containing all the leap years in a range
 	public static int[] showAllInTheRange(int firstYear, int secondYear)
 	{
+		 // get the number of leap years in the range
 		int count = ((secondYear - firstYear)/4) + 1;
-		System.out.println("count = " + count);
-
 		int leapYears[] = new int[count];
 
 		System.out.print("Leap Years between " + firstYear + " and " + secondYear + " :\n[ ");
 
 		for(int i = firstYear; i <= secondYear; ++i)
 		{
-			// System.out.println(i);
 			if(isLeapYear(i))
 			{
 				leapYears[(i-firstYear)/4] = i;

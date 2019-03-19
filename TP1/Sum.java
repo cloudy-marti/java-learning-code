@@ -3,13 +3,12 @@ import java.util.Arrays;
 
 public class Sum
 {
+	 // casts elements of args into integers and return an integer array
 	public static int[] strToInt(String[] args)
 	{
 		System.out.print("integers : ");
 
 		int intArray[] = new int[args.length];
-
-		int sum = 0;
 
 		for(int i = 0; i < args.length; ++i)
 		{
@@ -24,6 +23,7 @@ public class Sum
 		return intArray;
 	}
 
+	 // return the sum of all the numbers in the integer array
 	public static int getSum(int[] intArray)
 	{
 		int sum = 0;

@@ -2,6 +2,12 @@ public class PrintArgs
 {
 	public static void main(String[] args)
 	{
+		if(args.length < 1)
+		{
+			System.out.println("two few arguments ...");
+			return;
+		}
+
 		/* --- EXO 2.1 --- */
 		System.out.println("Exo 2.1 : " + args[0]);
 		System.out.println();
