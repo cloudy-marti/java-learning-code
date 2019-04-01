@@ -1,0 +1,384 @@
+!SESSION 2019-04-01 10:22:12.756 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=11.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.ds 4 0 2019-04-01 10:22:19.330
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.ds [61]
+  Unresolved requirement: Import-Package: org.osgi.service.component; version="[1.1.0,1.3.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1614)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.frameworkadmin.equinox 4 0 2019-04-01 10:22:19.354
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.frameworkadmin.equinox [64]
+  Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.directorywatcher 4 0 2019-04-01 10:22:19.356
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.directorywatcher [78]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.update
+    -> Export-Package: org.eclipse.equinox.internal.p2.update; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation,org.eclipse.equinox.p2.directorywatcher"
+       org.eclipse.equinox.p2.touchpoint.eclipse [92]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+           -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+              org.eclipse.equinox.simpleconfigurator.manipulator [105]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+                     org.eclipse.equinox.frameworkadmin.equinox [64]
+                       Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+         Unresolved requirement: Import-Package: org.eclipse.equinox.p2.publisher.eclipse; resolution:="optional"
+           -> Export-Package: org.eclipse.equinox.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.touchpoint.eclipse,  org.eclipse.equinox.p2.updatesite,  org.eclipse.equinox.p2.repository.tools"
+              org.eclipse.equinox.p2.publisher.eclipse [87]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator
+           -> Export-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.touchpoint.eclipse"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.p2.publisher.eclipse
+    -> Export-Package: org.eclipse.equinox.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.touchpoint.eclipse,  org.eclipse.equinox.p2.updatesite,  org.eclipse.equinox.p2.repository.tools"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.extensionlocation 4 0 2019-04-01 10:22:19.357
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.extensionlocation [80]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse
+    -> Export-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.repository.tools,  org.eclipse.equinox.p2.updatesite,  org.eclipse.pde.build"
+       org.eclipse.equinox.p2.publisher.eclipse [87]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+           -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+              org.eclipse.equinox.simpleconfigurator.manipulator [105]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+                     org.eclipse.equinox.frameworkadmin.equinox [64]
+                       Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+           -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.touchpoint.eclipse
+    -> Export-Package: org.eclipse.equinox.internal.p2.touchpoint.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation"
+       org.eclipse.equinox.p2.touchpoint.eclipse [92]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator
+           -> Export-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.touchpoint.eclipse"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.update
+    -> Export-Package: org.eclipse.equinox.internal.p2.update; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation,org.eclipse.equinox.p2.directorywatcher"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2019-04-01 10:22:19.359
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.publisher.eclipse [87]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+    -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+       org.eclipse.equinox.simpleconfigurator.manipulator [105]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+           -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+              org.eclipse.equinox.frameworkadmin.equinox [64]
+                Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+    -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.repository.tools 4 0 2019-04-01 10:22:19.360
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.repository.tools [91]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse
+    -> Export-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.repository.tools,  org.eclipse.equinox.p2.updatesite,  org.eclipse.pde.build"
+       org.eclipse.equinox.p2.publisher.eclipse [87]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+           -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+              org.eclipse.equinox.simpleconfigurator.manipulator [105]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+                     org.eclipse.equinox.frameworkadmin.equinox [64]
+                       Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+           -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.p2.publisher.eclipse
+    -> Export-Package: org.eclipse.equinox.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.touchpoint.eclipse,  org.eclipse.equinox.p2.updatesite,  org.eclipse.equinox.p2.repository.tools"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.touchpoint.eclipse 4 0 2019-04-01 10:22:19.368
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.touchpoint.eclipse [92]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+    -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+       org.eclipse.equinox.simpleconfigurator.manipulator [105]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+           -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+              org.eclipse.equinox.frameworkadmin.equinox [64]
+                Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+  Unresolved requirement: Import-Package: org.eclipse.equinox.p2.publisher.eclipse; resolution:="optional"
+    -> Export-Package: org.eclipse.equinox.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.touchpoint.eclipse,  org.eclipse.equinox.p2.updatesite,  org.eclipse.equinox.p2.repository.tools"
+       org.eclipse.equinox.p2.publisher.eclipse [87]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+           -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator
+    -> Export-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.touchpoint.eclipse"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui.importexport 4 0 2019-04-01 10:22:19.370
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.ui.importexport [96]
+  Unresolved requirement: Require-Bundle: org.eclipse.equinox.p2.extensionlocation
+    -> Bundle-SymbolicName: org.eclipse.equinox.p2.extensionlocation; bundle-version="1.2.100.dist"; singleton:="true"
+       org.eclipse.equinox.p2.extensionlocation [80]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse
+           -> Export-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.repository.tools,  org.eclipse.equinox.p2.updatesite,  org.eclipse.pde.build"
+              org.eclipse.equinox.p2.publisher.eclipse [87]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+                  -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+                     org.eclipse.equinox.simpleconfigurator.manipulator [105]
+                       Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                         -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+                            org.eclipse.equinox.frameworkadmin.equinox [64]
+                              Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.touchpoint.eclipse
+           -> Export-Package: org.eclipse.equinox.internal.p2.touchpoint.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation"
+              org.eclipse.equinox.p2.touchpoint.eclipse [92]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator
+                  -> Export-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.touchpoint.eclipse"
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.update
+           -> Export-Package: org.eclipse.equinox.internal.p2.update; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation,org.eclipse.equinox.p2.directorywatcher"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.updatesite 4 0 2019-04-01 10:22:19.371
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.updatesite [100]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse
+    -> Export-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.repository.tools,  org.eclipse.equinox.p2.updatesite,  org.eclipse.pde.build"
+       org.eclipse.equinox.p2.publisher.eclipse [87]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+           -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+              org.eclipse.equinox.simpleconfigurator.manipulator [105]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+                     org.eclipse.equinox.frameworkadmin.equinox [64]
+                       Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+           -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.p2.publisher.eclipse
+    -> Export-Package: org.eclipse.equinox.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.touchpoint.eclipse,  org.eclipse.equinox.p2.updatesite,  org.eclipse.equinox.p2.repository.tools"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.simpleconfigurator.manipulator 4 0 2019-04-01 10:22:19.373
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.simpleconfigurator.manipulator [105]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+    -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+       org.eclipse.equinox.frameworkadmin.equinox [64]
+         Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2019-04-01 10:22:20.142
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.equinox.p2.reconciler.dropins [89]
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.extensionlocation
+    -> Export-Package: org.eclipse.equinox.internal.p2.extensionlocation; bundle-symbolic-name="org.eclipse.equinox.p2.extensionlocation"; bundle-version="1.2.100.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.ui.importexport"
+       org.eclipse.equinox.p2.extensionlocation [80]
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse
+           -> Export-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.publisher.eclipse"; bundle-version="1.1.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.directorywatcher,  org.eclipse.equinox.p2.extensionlocation,  org.eclipse.equinox.p2.repository.tools,  org.eclipse.equinox.p2.updatesite,  org.eclipse.pde.build"
+              org.eclipse.equinox.p2.publisher.eclipse [87]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+                  -> Export-Package: org.eclipse.equinox.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="2.0.0"
+                     org.eclipse.equinox.simpleconfigurator.manipulator [105]
+                       Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                         -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+                            org.eclipse.equinox.frameworkadmin.equinox [64]
+                              Unresolved requirement: Import-Package: org.eclipse.osgi.framework.internal.core
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.frameworkadmin.equinox
+                  -> Export-Package: org.eclipse.equinox.internal.frameworkadmin.equinox; bundle-symbolic-name="org.eclipse.equinox.frameworkadmin.equinox"; bundle-version="1.0.400.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.publisher,org.eclipse.equinox.simpleconfigurator.manipulator"
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.touchpoint.eclipse
+           -> Export-Package: org.eclipse.equinox.internal.p2.touchpoint.eclipse; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation"
+              org.eclipse.equinox.p2.touchpoint.eclipse [92]
+                Unresolved requirement: Import-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator
+                  -> Export-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator; bundle-symbolic-name="org.eclipse.equinox.simpleconfigurator.manipulator"; bundle-version="2.0.0.dist"; version="0.0.0"; x-friends:="org.eclipse.equinox.p2.touchpoint.eclipse"
+         Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.update
+           -> Export-Package: org.eclipse.equinox.internal.p2.update; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation,org.eclipse.equinox.p2.directorywatcher"
+  Unresolved requirement: Import-Package: org.eclipse.equinox.internal.p2.update
+    -> Export-Package: org.eclipse.equinox.internal.p2.update; bundle-symbolic-name="org.eclipse.equinox.p2.touchpoint.eclipse"; bundle-version="2.1.100.dist"; version="2.0.0"; x-friends:="org.eclipse.equinox.p2.reconciler.dropins,org.eclipse.equinox.p2.extensionlocation,org.eclipse.equinox.p2.directorywatcher"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1614)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1429)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui.sdk.scheduler 4 0 2019-04-01 10:22:52.654
+!MESSAGE The update checker service is not initialized
+
+!ENTRY org.eclipse.ui 4 0 2019-04-01 10:28:27.057
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.core.runtime.AssertionFailedException: assertion failed: )
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3537)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3189)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+Caused by: org.eclipse.core.runtime.AssertionFailedException: assertion failed: 
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:110)
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:96)
+	at org.eclipse.ui.internal.ide.EditorAreaDropAdapter.asyncDrop(EditorAreaDropAdapter.java:131)
+	at org.eclipse.ui.internal.ide.EditorAreaDropAdapter.access$0(EditorAreaDropAdapter.java:87)
+	at org.eclipse.ui.internal.ide.EditorAreaDropAdapter$1.run(EditorAreaDropAdapter.java:81)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+
+!ENTRY org.eclipse.ui 4 0 2019-04-01 10:28:35.930
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.core.runtime.AssertionFailedException: assertion failed: )
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3537)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3189)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+Caused by: org.eclipse.core.runtime.AssertionFailedException: assertion failed: 
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:110)
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:96)
+	at org.eclipse.ui.internal.ide.EditorAreaDropAdapter.asyncDrop(EditorAreaDropAdapter.java:131)
+	at org.eclipse.ui.internal.ide.EditorAreaDropAdapter.access$0(EditorAreaDropAdapter.java:87)
+	at org.eclipse.ui.internal.ide.EditorAreaDropAdapter$1.run(EditorAreaDropAdapter.java:81)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more

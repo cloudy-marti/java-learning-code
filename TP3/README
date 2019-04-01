@@ -1,0 +1,11 @@
+/**
+ * Exercice 1 - Livre
+ *
+ * 		1.1.
+ *		À l'exécution on a : null null
+ *		Car on a créé un objet Book avec le constructeur par défaut
+ *		Qui ne prend rien en paramètres et donc les champs sont vides
+ *
+ *		1.2
+ *		
+ */
