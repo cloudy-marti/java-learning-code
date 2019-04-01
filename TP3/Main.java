@@ -4,14 +4,12 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		// EXERCICE 1
 		// Book book = new Book("hello", "moto");
-		// Book book2 = Book.Book("Hello");
+		// Book book2 = new Book("Hello");
 		
 		// System.out.println(book.getTitle() + ' ' + book.getAuthor());
 		// System.out.println(book2.getTitle() + ' ' + book2.getAuthor());
 
-		// EXERCICE 2
 		// Book b1 = new Book("Da Java Code", "Duke Brown");
 		// Book b2 = b1;
 		// Book b3 = new Book("Da Java Code", "Duke Brown");
@@ -29,10 +27,13 @@ public class Main
 		// System.out.println(list.indexOf(b3));
 
 		Book aBook = new Book("Da Java Code", "Duke Brown");
-		Book anotherBook = new Book("<no title>", "<no author>");
+		Book anotherBook = new Book("hello");
 		ArrayList list = new ArrayList();
 		list.add(aBook);
 		System.out.println(list.indexOf(anotherBook));
+
+		System.out.println(aBook.toString());
+		System.out.println(anotherBook.toString());
 	}
 }
 

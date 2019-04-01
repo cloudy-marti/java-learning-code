@@ -6,15 +6,18 @@ public class Book
 	private String title;
 	private String author;
 
+	boolean authorKnown = true;
+
 	public Book(String title, String author)
 	{
 		this.title = Objects.requireNonNull(title);
 		this.author = Objects.requireNonNull(author);
 	}
 
-	public static Book Book(String title)
+	public Book(String title)
 	{
-		return new Book(title, "<no author>");
+		this(title, "<no author>");
+		this.authorKnown = false;
 	}
 
 	public String getTitle()
@@ -43,6 +46,13 @@ public class Book
 	@Override
 	public String toString()
 	{
-		
+		String bookString = new String();
+
+		if(!this.authorKnown)
+			bookString = this.title;
+		else
+			bookString = this.title + " by " + this.author;
+
+		return bookString;
 	}
 }
