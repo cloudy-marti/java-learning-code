@@ -1,21 +1,21 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Iterator;
 import java.util.Optional;
 
 public class FreeShoppingCart
 {
-	private ArrayList<Book> shoppingCart;
+	private LinkedList<Book> shoppingCart;
 	private int bookCounter;
 	
 	public FreeShoppingCart()
 	{
-		 this.shoppingCart = new ArrayList<Book>();
+		 this.shoppingCart = new LinkedList<Book>();
 		 this.bookCounter = 0;
 	}
 	
 	public void addBook(Book newBook)
 	{
-		this.shoppingCart.add(newBook);
+		this.shoppingCart.add(newBook); // this.shoppingCart.offerLast(newBook)
 		this.bookCounter++;
 	}
 	
@@ -72,4 +72,24 @@ public class FreeShoppingCart
 		
 		return Optional.of(longuestTitleBook);
 	}
+
+	public Optional<Book> removeFirstOccurrence()
+	{
+		return this.shoppingCart.removeFirst();
+	}
+
+	public void removeFirstOccurrenceWithIterator()
+	{
+		this.shoppingCart.next().remove();
+	}
+
 }
+
+/**
+ * 3.7
+ * Changer ArrayList par LinkedList sans changer le reste du code marche bien
+ * car elles doivent posséder les mêmes méthodes même si codées différemment)
+ *
+ * La complexité doit être la même car on s'occupe que du premier élément
+ *
+ */
