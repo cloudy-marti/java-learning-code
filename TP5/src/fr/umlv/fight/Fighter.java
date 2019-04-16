@@ -28,7 +28,7 @@ public class Fighter extends Robot
     }
 
     @Override
-    public boolean aim()
+    protected boolean aim()
     {
         return this.randomSeed.nextBoolean();
     }

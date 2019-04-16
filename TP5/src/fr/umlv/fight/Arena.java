@@ -1,13 +1,13 @@
 package fr.umlv.fight;
 
+/**
+ * My methods for the Arena will be static
+ * So I don't need to construct an object Arena
+ * But I can also access my methods
+ */
 public class Arena
 {
-    public Arena()
-    {
-
-    }
-
-    private Robot getWinner(Robot first, Robot second)
+    private static Robot getWinner(Robot first, Robot second)
     {
         Robot winner;
 
@@ -19,7 +19,7 @@ public class Arena
         return winner;
     }
 
-    private Robot getLoser(Robot first, Robot second)
+    private static Robot getLoser(Robot first, Robot second)
     {
         Robot loser;
 
@@ -31,20 +31,23 @@ public class Arena
         return loser;
     }
 
-    public Robot fight(Robot first, Robot second)
+    public static Robot fight(Robot first, Robot second)
     {
+        /**
+         * The fight will continue until the IllegalArgumentException is thrown by fire
+         */
         while(!first.isDead() && !second.isDead())
         {
             first.fire(second);
             second.fire(first);
         }
 
-        Robot winner = this.getWinner(first, second);
-        Robot loser = this.getLoser(first, second);
+        Robot winner = Arena.getWinner(first, second);
+        Robot loser = Arena.getLoser(first, second);
 
-        System.out.println(loser + " has been beaten by "+ winner + " !\n");
+        System.out.println("\n" + loser + " has been beaten by "+ winner + " !\n");
 
-        return winner;
+        return first;
     }
 
 

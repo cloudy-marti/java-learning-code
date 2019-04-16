@@ -28,11 +28,22 @@ public class Robot
 
     public void fire(Robot target)
     {
+        if(target.isDead())
+        {
+            /**
+             * This function should not be called when the target is already Dead
+             * The problem is the argument so we use IllegalArgumentException
+             */
+            throw new IllegalArgumentException(target.toString() + " is already Dead !");
+        }
+
         if(this.aim())
         {
             target.healthPoints -= this.firePower;
             System.out.println(this + " has touched " + target + "!");
         }
+        else
+            System.out.println("oops, " + this.toString() + " has failed the shot !");
     }
 
     public boolean isDead()
@@ -40,7 +51,11 @@ public class Robot
         return this.healthPoints <= 0;
     }
 
-    public boolean aim()
+    /**
+     * This is the rollDice() method, which has been already implemented
+     * before reading the rollDice() part
+     */
+    protected boolean aim()
     {
         return true;
     }
