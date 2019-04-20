@@ -32,18 +32,32 @@ public class Robot
         {
             /**
              * This function should not be called when the target is already Dead
-             * The problem is the argument so we use IllegalArgumentException
+             * The problem would be the argument so we use IllegalArgumentException
              */
             throw new IllegalArgumentException(target.toString() + " is already Dead !");
         }
 
+        StringBuilder fireStr = new StringBuilder();
+
         if(this.aim())
         {
             target.healthPoints -= this.firePower;
-            System.out.println(this + " has touched " + target + "!");
+
+            fireStr.append(this);
+            fireStr.append(" has touched ");
+            fireStr.append(target);
+            fireStr.append("!");
+
+            System.out.println(fireStr);
         }
         else
-            System.out.println("oops, " + this.toString() + " has failed the shot !");
+        {
+            fireStr.append("oops, ");
+            fireStr.append(this);
+            fireStr.append(" has failed the shot !");
+
+            System.out.println(fireStr);
+        }
     }
 
     public boolean isDead()
@@ -52,7 +66,7 @@ public class Robot
     }
 
     /**
-     * This is the rollDice() method, which has been already implemented
+     * This is the rollDice() method, which had been already implemented
      * before reading the rollDice() part
      */
     protected boolean aim()

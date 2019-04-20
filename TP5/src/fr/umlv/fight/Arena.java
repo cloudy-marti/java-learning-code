@@ -1,9 +1,8 @@
 package fr.umlv.fight;
 
 /**
- * My methods for the Arena will be static
- * So I don't need to construct an object Arena
- * But I can also access my methods
+ * My methods for the Arena will be static so I don't need to construct an object Arena
+ * But I can still access my methods
  */
 public class Arena
 {
@@ -45,7 +44,15 @@ public class Arena
         Robot winner = Arena.getWinner(first, second);
         Robot loser = Arena.getLoser(first, second);
 
-        System.out.println("\n" + loser + " has been beaten by "+ winner + " !\n");
+        StringBuilder fightStr = new StringBuilder();
+
+        fightStr.append("\n");
+        fightStr.append(loser);
+        fightStr.append(" has been beaten by ");
+        fightStr.append(winner);
+        fightStr.append(" !\n");
+
+        System.out.println(fightStr);
 
         return first;
     }
