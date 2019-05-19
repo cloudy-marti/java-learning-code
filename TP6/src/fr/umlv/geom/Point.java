@@ -24,7 +24,7 @@ public class Point
 	@Override
 	public String toString()
 	{
-		return "(" + x + ',' + y + ')';
+		return "(" + x + ", " + y + ')';
 	}
 
 	/**
@@ -32,7 +32,7 @@ public class Point
 	 */
 	public double getDistance(Point point)
 	{
-		return Math.sqrt(((x - point.getX())*(x - point.getX())) + ((x - point.getY())*(x - point.getY())));
+		return Math.sqrt(((x - point.getX())*(x - point.getX())) + ((y - point.getY())*(y - point.getY())));
 	}
 
 	public boolean equals(Point point)

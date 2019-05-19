@@ -22,11 +22,31 @@ public class Main
         circle.getCenter().translate(1,1);
         System.out.println(circle);*/
 
-        Point p=new Point(1,2);
-        Circle c=new Circle(p,2);
-        System.out.println(c);
-        Ring r = new Ring(p, 2, 1);
-        System.out.println(r);
+        Point p = new Point(0,0);
+        Point point = new Point(0, 4);
+
+        Circle circle = new Circle(p,5);
+        Circle blueCircle = new Circle(new Point(7, 2), 6 );
+        Circle blackCircle = new Circle(new Point(2, 5), 10);
+
+        System.out.println("\n\t- " + circle + "\n\t- " + blueCircle + "\n\t -" + blackCircle);
+
+        if(circle.contains(point, circle, blueCircle, blackCircle))
+            System.out.println("Point " + point + " is in one of the circles !");
+        else
+            System.out.println("Point " + point + " is not NOT none of the circles");
+
+        Ring r = new Ring(p, 5, 3);
+        Ring ring = new Ring(new Point(2, 3), 3, 2);
+        Ring goldRing = new Ring(new Point(0, 1), 7, 2);
+
+        System.out.println("\n\t- " + r + "\n\t- " + ring + "\n\t- " + goldRing);
+
+        if(r.contains(point, r, ring, goldRing))
+            System.out.println("Point " + point + " is in one of the rings !");
+        else
+            System.out.println("Point " + point + " is NOT in none of the rings");
+
     }
 }
 
