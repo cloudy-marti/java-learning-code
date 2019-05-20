@@ -74,11 +74,11 @@ public class OpOrValue
 	{
 		OpOrValue calcTree = parseRec(scanner);
 
-		if(scanner.hasNext())
+		/*if(scanner.hasNext())
 		{
 			System.out.println(scanner.next());
 			throw new IllegalArgumentException("scanner too long");
-		}
+		}*/
 
 		return calcTree;
 	}
