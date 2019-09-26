@@ -1,7 +1,6 @@
 package fr.umlv.vehicle;
 
 import java.util.Objects;
-import java.util.Optional;
 
 abstract class Vehicle implements IVehicle
 {

@@ -106,13 +106,13 @@ public class RentalTest {
     var list = rental.findAllByYear(2014);
     assertTrue(list.isEmpty());
   }
-  /**
+
   @Test @Tag("Q7")
   public void shouldGetErrorWhenSearchingANullCar() {
     var rental = new CarRental();
     assertThrows(NullPointerException.class, () -> rental.findACarByModel(null));
   }
-*/
+
   @Test @Tag("Q8")
   public void shouldAddCarsOrCamelsOfRental() {
     var rental = new CarRental();
@@ -218,7 +218,7 @@ public class RentalTest {
     rental.add(new Camel(2013));
     assertThrows(IllegalArgumentException.class, () -> rental.insuranceCostAt(2012));
   }
-/**
+
   @Test @Tag("Q12")
   public void shouldFindACarByModelInRental() {
     var rental = new CarRental();
@@ -234,17 +234,5 @@ public class RentalTest {
     rental.add(new Camel(1992));
     assertFalse(rental.findACarByModel("ford mustang").isPresent());
   }
-  */
-}
 
-/**
- * L'interface stream transforme une collection en un flux sur lequel on peut faire plusieurs opérations et le retransformer
- * en collection.
- *
- * Filter va retourner une stream avec les éléments qui respectent les conditions données par le predicat passé en argument.
- *
- * Map va retourner une stream avec les éléments après leur avoir appliqué la fonction passéé en argument
- *
- * Collect permet de transformer la liste en un Collectable (il faut append une fonction du genre toList ensuite).
- *
- */
+}

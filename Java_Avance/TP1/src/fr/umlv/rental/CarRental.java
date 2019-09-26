@@ -1,5 +1,6 @@
 package fr.umlv.rental;
 
+import fr.umlv.vehicle.Car;
 import fr.umlv.vehicle.IVehicle;
 
 import java.util.*;
@@ -33,6 +34,9 @@ public class CarRental
 	
 	public String toString()
 	{
+		/**
+		 * cars.stream().map(Object::toString).collect(Collectors.joining("\n"))
+		 */
 		StringBuilder str = new StringBuilder();
 		
 		Iterator<IVehicle> carsIterator = this.vehicles.iterator();
@@ -67,13 +71,28 @@ public class CarRental
 
 		return total;
 	}
-/**
-	public Optional<IVehicle> findACarByModel(String model)
+
+	public Optional<Car> findACarByModel(String model)
 	{
+		Objects.requireNonNull(model);
 
-	}*/
+		List<IVehicle> myCars = vehicles.stream()
+				.filter(vehicle -> {
+					if (vehicle instanceof Car)
+					{
+						return ((Car) vehicle).getModel().equals(model);
+					}
+					return false;
+				})
+				.collect(Collectors.toList());
+
+		if(myCars.isEmpty())
+		{
+			return Optional.empty();
+		}
+		else
+		{
+			return Optional.of((Car)myCars.get(0));
+		}
+	}
 }
-
-/**
- * L'interface Stream
- */
