@@ -1,6 +1,5 @@
 package fr.umlv.movies;
 
-import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -50,14 +49,3 @@ public class Movies
 		return map.entrySet().stream().collect(Collectors.maxBy(Comparator.comparing(Map.Entry::getValue)));
 	}
 }
-
-/***
- * Exercice 2.
- * 2. La méthode Stream.flatMap() va appliquer une opération sur chaque élément de la stream (map) puis
- * va décomposer toutes les collections pour en avoir qu'une seule.
- *
- * Du coup on va avoir : Collection<Collection<T>> ---> Collection<T>
- *
- * Dans notre cas on va pouvoir avoir tous les acteurs dans une seule liste (plutôt que plusieurs listes
- * de noms d'acteurs).
- */

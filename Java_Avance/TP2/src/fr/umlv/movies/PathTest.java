@@ -1,12 +1,9 @@
 package fr.umlv.movies;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
-import java.util.Objects;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PathTest
 {
@@ -74,11 +71,3 @@ public class PathTest
 		}
 	}*/
 }
-
-/***
- * Exercice 1
- * 1 .
- * http s://docs.oracle.com/javase/tutorial/essential/io/legacy.html
- *
- *
- */
