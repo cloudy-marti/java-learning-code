@@ -117,8 +117,7 @@ public class HealthCheckTest {
 	public void uriFinderFromURINullShouldThrowANPE() {
 		assertThrows(NullPointerException.class, () -> URIFinder.fromURI(null));
 	}
-	
-	/*
+
 	@Test @Tag("Q5")
 	public void uriFinderOrShouldTryTheFirstURIFinderFirst() {
 		var uriFinder = URIFinder.fromURI("http://www.google.fr")
@@ -144,7 +143,7 @@ public class HealthCheckTest {
 		assertThrows(NullPointerException.class, () -> alwaysEmpty.or(null));
 	}
 	
-	
+	/*
 	@Test @Tag("Q6")
 	public void uriFinderFromMapGetLikeShouldGetTheURIOfAnExistingKey() {
 		var map = Map.of("1", "http://www.google.fr", "2", "http://www.u-pem.fr");
