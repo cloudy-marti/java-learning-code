@@ -74,3 +74,11 @@ hs_err_pid*
 *.iml
 
 .~*
+
+# word and pdf files
+*.docx
+*.pdf
+
+# Compressed directories
+*.zip
+*.7z

@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
 //import fr.umlv.healthcheck.HealthCheck.URIFinder;
 
 @SuppressWarnings("static-method")
-public class HealthCheckTest {/*
+public class HealthCheckTest {
 	@Test @Tag("Q1")
 	public void healthCheckShouldWorkWithGoogleDotFr() throws Exception {
 		var uri = URI.create("http://www.google.fr");
@@ -170,7 +170,7 @@ public class HealthCheckTest {/*
 		  () -> assertThrows(NullPointerException.class, () -> URIFinder.fromMapGetLike(null, __ -> null)),
 		  () -> assertThrows(NullPointerException.class, () -> URIFinder.fromMapGetLike("foo", null))
 		  );
-	}*/
+	}
 
 	@Test @Tag("Q7")
 	public void uriFinderFromMapGetLikeShouldGetTheURIOfAnExistingKeyEvenAsAnInteger() {
