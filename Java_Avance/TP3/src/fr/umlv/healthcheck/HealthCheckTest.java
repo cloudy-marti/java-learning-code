@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
 //import fr.umlv.healthcheck.HealthCheck.URIFinder;
 
 @SuppressWarnings("static-method")
-public class HealthCheckTest {
+public class HealthCheckTest {/*
 	@Test @Tag("Q1")
 	public void healthCheckShouldWorkWithGoogleDotFr() throws Exception {
 		var uri = URI.create("http://www.google.fr");
@@ -142,8 +142,7 @@ public class HealthCheckTest {
 		URIFinder alwaysEmpty = Optional::empty;
 		assertThrows(NullPointerException.class, () -> alwaysEmpty.or(null));
 	}
-	
-	/*
+
 	@Test @Tag("Q6")
 	public void uriFinderFromMapGetLikeShouldGetTheURIOfAnExistingKey() {
 		var map = Map.of("1", "http://www.google.fr", "2", "http://www.u-pem.fr");
@@ -171,8 +170,7 @@ public class HealthCheckTest {
 		  () -> assertThrows(NullPointerException.class, () -> URIFinder.fromMapGetLike(null, __ -> null)),
 		  () -> assertThrows(NullPointerException.class, () -> URIFinder.fromMapGetLike("foo", null))
 		  );
-	}
-	
+	}*/
 
 	@Test @Tag("Q7")
 	public void uriFinderFromMapGetLikeShouldGetTheURIOfAnExistingKeyEvenAsAnInteger() {
@@ -191,7 +189,7 @@ public class HealthCheckTest {
         URIFinder.fromMapGetLike(42, (Object value) -> null);
         URIFinder.<Integer>fromMapGetLike(42, (Object value) -> null);
 	}
-	
+
 	@Test @Tag("Q8")
 	public void uriFinderFromPropertyFileWithTheRightKeyShouldBePresent() throws IOException {
 		var path = Files.createTempFile("", "healthcheck-present.txt");
@@ -241,5 +239,4 @@ public class HealthCheckTest {
 				() -> assertThrows(NullPointerException.class, () -> URIFinder.fromPropertyFile(Path.of("nullcheck.txt"), null))
 				);
 	}
-	 */
 }
