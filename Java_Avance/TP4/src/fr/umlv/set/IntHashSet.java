@@ -63,6 +63,7 @@ public class IntHashSet {
             if(pointer.value == value) {
                 return true;
             }
+            pointer = pointer.next;
         }
         return false;
     }
