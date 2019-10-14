@@ -11,7 +11,6 @@ import org.junit.jupiter.api.*;
 
 @SuppressWarnings("static-method")
 public class IntHashSetTest {
-/*
   //Q3
   @Test
   public void shouldAddAString() {
@@ -98,7 +97,7 @@ public class IntHashSetTest {
     list.sort(null);
     IntStream.range(0, 100).forEach(i -> assertEquals(i, (int)list.get(i)));
   }
-  
+
   //Q6
   @Test
   public void shouldNotFindAnythingContainedInAnEmptySet() {
@@ -128,6 +127,4 @@ public class IntHashSetTest {
     set.add(Integer.MAX_VALUE);
     assertTrue(set.contains(Integer.MAX_VALUE));
   }
-  
- */
 }
