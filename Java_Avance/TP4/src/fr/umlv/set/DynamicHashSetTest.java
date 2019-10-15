@@ -71,7 +71,7 @@ public class DynamicHashSetTest {
     set.add(-777);
     assertEquals(2, set.size());
   }
-/*
+
   @Test
   public void shouldNotUseNullAsAParameterForForEach() {
     var set = new DynamicHashSet<Integer>();
@@ -121,7 +121,8 @@ public class DynamicHashSetTest {
     Consumer<Object> consumer = o -> assertTrue(o.equals("foo")); 
     set.forEach(consumer);
   }
-  
+
+  /*
   @Test
   public void shouldNotFindAnythingInAnEmptySet() {
     var set = new DynamicHashSet<String>();

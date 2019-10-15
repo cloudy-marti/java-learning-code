@@ -1,6 +1,7 @@
 package fr.umlv.set;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class DynamicHashSet <T> {
     private final int minSize = 8;
@@ -26,7 +27,7 @@ public class DynamicHashSet <T> {
     }
 
     public void add(T element) {
-        if(numberOfEntries+1 > hashSetSize)
+        if(numberOfEntries+1 > hashSetSize / 2)
         {
             increaseHashSetSize();
         }
@@ -50,28 +51,25 @@ public class DynamicHashSet <T> {
         return this.numberOfEntries;
     }
 
+    public void forEach(Consumer<T> function) {
+        Objects.requireNonNull(function);
 
+        for(Entry entry : hashSet) {
+            Entry tmp = entry;
+            while (tmp != null) {
+                function.accept(entry.value);
+                tmp = tmp.next;
+            }
+        }
+    }
 
     class Entry <T> {
         private final T value;
         private final Entry<T> next;
 
-        Entry(T value, Entry next) {
+        Entry(T value, Entry<T> next) {
             this.value = value;
             this.next = next;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Entry<?> entry = (Entry<?>) o;
-            return Objects.equals(value, entry.value);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(value);
         }
     }
 }
