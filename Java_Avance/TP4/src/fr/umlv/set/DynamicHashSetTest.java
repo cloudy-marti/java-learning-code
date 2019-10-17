@@ -122,7 +122,6 @@ public class DynamicHashSetTest {
     set.forEach(consumer);
   }
 
-  /*
   @Test
   public void shouldNotFindAnythingInAnEmptySet() {
     var set = new DynamicHashSet<String>();
@@ -171,7 +170,8 @@ public class DynamicHashSetTest {
     IntStream.range(0, 100_000).forEach(set::add);
     assertTimeout(Duration.ofMillis(5_000), () -> IntStream.range(0, 100_000).forEach(set::contains));
   }
-  
+
+  /*
   @Test
   public void shouldAddAllTheElementsOfAList() {
     var set = new DynamicHashSet<String>();

@@ -13,49 +13,53 @@ public class DynamicHashSet <T> {
     public DynamicHashSet() {
         this.numberOfEntries = 0;
         this.hashSetSize = minSize;
-        this.hashSet = new Entry[hashSetSize];
+        this.hashSet = (Entry<T>[]) new Entry[hashSetSize];
     }
 
     private void increaseHashSetSize() {
         int hashSetNewSize = hashSetSize * 2;
-        Entry<T>[] hashSetTmp = new Entry[hashSetNewSize];
+        Entry<T>[] hashSetTmp = (Entry<T>[]) new Entry[hashSetNewSize];
 
-        java.lang.System.arraycopy(hashSet, 0, hashSetTmp, 0, hashSetSize);
+        this.forEach(value -> add(value, hashSetTmp));
 
         hashSetSize = hashSetNewSize;
         hashSet = hashSetTmp;
     }
 
-    public void add(T element) {
-        if(numberOfEntries+1 > hashSetSize / 2)
-        {
-            increaseHashSetSize();
-        }
-
+    private boolean add(T element, Entry<T>[] hashSetMap) {
         int index = element.hashCode() & (hashSetSize - 1);
 
-        Entry pointer = hashSet[index];
+        Entry pointer = hashSetMap[index];
         while(pointer != null) {
             if(pointer.value.equals(element)) {
-                return;
+                return false;
             }
             pointer = pointer.next;
         }
 
-        hashSet[index] = new Entry(element, hashSet[index]);
+        hashSetMap[index] = new Entry(element, hashSetMap[index]);
+        return true;
+    }
 
-        numberOfEntries++;
+    public void add(T element) {
+        if(numberOfEntries+1 > hashSetSize / 2) {
+            increaseHashSetSize();
+        }
+
+        if(add(element, hashSet)) {
+            numberOfEntries++;
+        }
     }
 
     public int size() {
         return this.numberOfEntries;
     }
 
-    public void forEach(Consumer<T> function) {
+    public void forEach(Consumer<? super T> function) {
         Objects.requireNonNull(function);
 
-        for(Entry entry : hashSet) {
-            Entry tmp = entry;
+        for(Entry<T> entry : hashSet) {
+            Entry<T> tmp = entry;
             while (tmp != null) {
                 function.accept(entry.value);
                 tmp = tmp.next;
@@ -63,13 +67,40 @@ public class DynamicHashSet <T> {
         }
     }
 
-    class Entry <T> {
-        private final T value;
-        private final Entry<T> next;
+    public boolean contains(T element) {
+        int index = element.hashCode() & (hashSetSize - 1);
 
-        Entry(T value, Entry<T> next) {
+        Entry<T> pointer = hashSet[index];
+
+        while(pointer != null) {
+            if(pointer.value.equals(element)) {
+                return true;
+            }
+            pointer = pointer.next;
+        }
+
+        return false;
+    }
+
+    class Entry <E> {
+        private final E value;
+        private final Entry<E> next;
+
+        Entry(E value, Entry<E> next) {
             this.value = value;
             this.next = next;
         }
+    }
+
+    public static void main(String args[]) {
+        var set = new DynamicHashSet<Integer>();
+        set.add(3);
+        System.out.println("Size =" + set.size());
+        set.add(-777);
+        System.out.println("Size =" + set.size());
+        set.add(3);
+        System.out.println("Size =" + set.size());
+        set.add(-777);
+        System.out.println("Size =" + set.size());
     }
 }
