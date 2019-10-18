@@ -171,7 +171,6 @@ public class DynamicHashSetTest {
     assertTimeout(Duration.ofMillis(5_000), () -> IntStream.range(0, 100_000).forEach(set::contains));
   }
 
-  /*
   @Test
   public void shouldAddAllTheElementsOfAList() {
     var set = new DynamicHashSet<String>();
@@ -195,6 +194,4 @@ public class DynamicHashSetTest {
     var hashSet = new HashSet<String>();
     set.addAll(hashSet);
   }
-
-   */
 }

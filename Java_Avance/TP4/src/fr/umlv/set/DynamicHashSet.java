@@ -1,5 +1,6 @@
 package fr.umlv.set;
 
+import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -81,6 +82,13 @@ public class DynamicHashSet <T> {
 
         return false;
     }
+
+    public void addAll(Collection<? extends T> collection) {
+        for(T element : collection) {
+            add(element);
+        }
+    }
+
 
     class Entry <E> {
         private final E value;
