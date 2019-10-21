@@ -82,3 +82,6 @@ hs_err_pid*
 # Compressed directories
 *.zip
 *.7z
+
+*.tmp
+*.png
