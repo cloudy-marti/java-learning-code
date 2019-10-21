@@ -1,11 +1,8 @@
 package fr.umlv.queue;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
-public class ResizeableFifo<E> implements Iterable<E> {
+public class ResizeableFifo<E> extends AbstractQueue<E> implements Iterable<E> {
     private E[] fifo;
     private int size;
 
@@ -32,7 +29,13 @@ public class ResizeableFifo<E> implements Iterable<E> {
         int newSize = size*2;
         E[] tmpFifo = (E[]) new Object[newSize];
 
-        System.arraycopy(fifo, head, tmpFifo, 0, nbOfElements);
+        System.arraycopy(Objects.requireNonNull(fifo), head,
+                Objects.requireNonNull(tmpFifo), 0,
+                nbOfElements-head);
+
+        System.arraycopy(Objects.requireNonNull(fifo), 0,
+                Objects.requireNonNull(tmpFifo), nbOfElements-head,
+                nbOfElements-tail);
 
         size = newSize;
         fifo = tmpFifo;
@@ -40,6 +43,7 @@ public class ResizeableFifo<E> implements Iterable<E> {
         tail = nbOfElements;
     }
 
+    /*
     public void offer(E element) {
         Objects.requireNonNull(element);
 
@@ -51,6 +55,7 @@ public class ResizeableFifo<E> implements Iterable<E> {
         tail = (tail+1)%size;
         nbOfElements += 1;
     }
+     */
 
     private boolean fifoIsEmpty() {
         if(nbOfElements == 0) {
@@ -59,9 +64,25 @@ public class ResizeableFifo<E> implements Iterable<E> {
         return false;
     }
 
+    @Override
+    public boolean offer(E e) {
+        Objects.requireNonNull(e);
+
+        if(nbOfElements == size) {
+            grow();
+        }
+        fifo[tail] = e;
+
+        tail = (tail+1)%size;
+        nbOfElements += 1;
+
+        return true;
+    }
+
     public E poll() {
         if(fifoIsEmpty()) {
-            throw new IllegalStateException("Fifo is empty");
+            //throw new IllegalStateException("Fifo is empty");
+            return null;
         }
 
         E tmp = fifo[head];
@@ -72,6 +93,15 @@ public class ResizeableFifo<E> implements Iterable<E> {
         nbOfElements -= 1;
 
         return tmp;
+    }
+
+    @Override
+    public E peek() {
+        if(isEmpty()) {
+            return null;
+        }
+
+        return fifo[head];
     }
 
     @Override

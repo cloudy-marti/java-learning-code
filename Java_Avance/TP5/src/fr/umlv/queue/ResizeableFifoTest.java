@@ -328,7 +328,8 @@ public class ResizeableFifoTest {
     //this test needs a lot of memory (more than 8 gigs)
     // so it is disabled by default
     // use the option -Xmx9g when running the VM
-  /* @Test
+    /*
+  @Test
   public void shouldNotGetAnOverflowErrorWhenIteratingOverAnAlmostMaximalCapacityFifo() {
     var fifo = new ResizeableFifo<Integer>(Integer.MAX_VALUE - 8);
     for(var i = 0; i < Integer.MAX_VALUE / 2; i++) {
@@ -342,7 +343,9 @@ public class ResizeableFifoTest {
     for(var it = fifo.iterator(); it.hasNext(); counter = (counter + 1) % 100) {
       assertEquals(counter, (int)it.next());
     }
-  }*/
+  }
+
+     */
 
     @Test
     public void shouldBeAbleToUseImplicitForEachLoop() {
@@ -361,7 +364,6 @@ public class ResizeableFifoTest {
     }
 
     // ---
-    /*
 
     @Test
     public void shoulGetNullWhenPeekingFromAnEmptyFifo() {
@@ -407,6 +409,4 @@ public class ResizeableFifoTest {
             assertEquals(it2.next(), it.next());
         }
     }
-    
-     */
 }
