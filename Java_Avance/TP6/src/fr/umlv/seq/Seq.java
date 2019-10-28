@@ -6,18 +6,31 @@ import java.util.function.Function;
 
 public class Seq<E> {
 
-    private final ArrayList<E> sequence;
+    private final ArrayList<Object> sequence;
     private final int size;
 
-    private ArrayList<E> mappedSequence;
+    private final Function <Object, E> function;
 
-    private Seq (List<E> list, int size) {
+    private Seq (List<Object> list, int size) {
         Objects.requireNonNull(list);
         if(list.stream().anyMatch(e -> e == null)) {
             throw new NullPointerException();
         }
         this.sequence = new ArrayList<>(list);
         this.size = size;
+
+        this.function = e -> (E)e;
+    }
+
+    private Seq (List<Object> list, Function<Object, E> function) {
+        Objects.requireNonNull(list);
+        if(list.stream().anyMatch(e -> e == null)) {
+            throw new NullPointerException();
+        }
+        this.sequence = new ArrayList(list);
+        this.size = list.size();
+
+        this.function = function;
     }
 
     public static Seq from(List list) {
@@ -34,7 +47,7 @@ public class Seq<E> {
     }
 
     public E get(int index) {
-        return sequence.get(index);
+        return function.apply(sequence.get(index));
     }
 
     public String toString() {
@@ -44,11 +57,13 @@ public class Seq<E> {
         return str.toString();
     }
 
-    public void forEach(Consumer<E> consumer) {
-        sequence.forEach(consumer::accept);
+    public void forEach(Consumer<? super E> consumer) {
+        sequence.forEach(e -> consumer.accept(function.apply(e)));
     }
 
-    public Seq<E> map(Function<E, E> function) {
-        return new Seq<>(sequence, size);
+    public <R>Seq<R> map(Function<? super E, ? extends R> function) {
+        Objects.requireNonNull(function);
+
+        return new Seq<R>(this.sequence, this.function.andThen(function));
     }
 }
