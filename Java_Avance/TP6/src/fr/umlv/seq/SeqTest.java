@@ -292,8 +292,8 @@ public class SeqTest {
     var seq = Seq.of().map(__ -> fail(""));
     seq.forEach(__ -> fail(""));
   }
-  
-/*
+
+
   @Test @Tag("Q6")
   public void testFirstSimple() {
   	assertAll(
@@ -343,7 +343,7 @@ public class SeqTest {
     assertEquals(1, fun.counter);
   }
   
-  
+
   @Test @Tag("Q7")
   public void testIteratorEnhancedForIntegers() {
     var seq = Seq.of(25, 52);
@@ -470,6 +470,4 @@ public class SeqTest {
           () -> assertNull(Seq.of("foo").stream().spliterator().trySplit())
         );
   }
-
-   */
 }
