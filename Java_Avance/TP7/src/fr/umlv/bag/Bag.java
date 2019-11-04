@@ -2,6 +2,7 @@ package fr.umlv.bag;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public interface Bag<E> extends Iterable<E> {
     public int add(E element, int count);
@@ -19,7 +20,20 @@ public interface Bag<E> extends Iterable<E> {
     }
 
     public static <T> Bag<T> createOrderedByElementBag(Comparator<? super T> comparator) {
+        Objects.requireNonNull(comparator);
         return new BagImpl<>(new TreeMap<>(comparator));
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> Bag<T> createOrderedByElementBagFromCollection(Collection<T> collection) {
+        Objects.requireNonNull(collection);
+        Bag<T> newBag = createOrderedByElementBag((Comparator<? super T>) Comparator.naturalOrder());
+
+        for(T element : collection) {
+            newBag.add(element, 1);
+        }
+
+        return newBag;
     }
 }
 

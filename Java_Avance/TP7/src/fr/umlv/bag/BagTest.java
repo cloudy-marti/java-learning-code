@@ -425,7 +425,6 @@ public class BagTest {
     assertEquals(List.of("boy", "boy", "girl", "hello", "hello", "hello"), list);
   }
 
-  /*
   @Test
   public void shouldTheBagCreatedFromACollectionTypedCorrectly() {
     Bag<String> bag = Bag.createOrderedByElementBagFromCollection(List.<String>of());
@@ -449,6 +448,4 @@ public class BagTest {
 
     assertEquals(List.of(new Timestamp(3), new Timestamp(7)), list2);
   }
-
-   */
 }
