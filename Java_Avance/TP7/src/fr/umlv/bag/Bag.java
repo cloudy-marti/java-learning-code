@@ -2,7 +2,6 @@ package fr.umlv.bag;
 
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 public interface Bag<E> extends Iterable<E> {
     public int add(E element, int count);
