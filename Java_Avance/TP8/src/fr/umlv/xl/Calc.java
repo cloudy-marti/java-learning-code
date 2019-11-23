@@ -1,10 +1,9 @@
 package fr.umlv.xl;
 
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.function.*;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class Calc<E> {
 
@@ -43,6 +42,7 @@ public class Calc<E> {
     public interface Group<T> {
         public Stream<T> values();
 
+        @SafeVarargs
         public static<V> Group<V> of(V... args) {
             Objects.requireNonNull(args);
             for(V arg : args) {
@@ -55,7 +55,6 @@ public class Calc<E> {
 
         public default void forEach(Consumer<? super T> consumer) {
             Objects.requireNonNull(consumer);
-
             values().forEach(consumer);
         }
 
@@ -74,8 +73,14 @@ public class Calc<E> {
             return list::stream;
         }
 
-        public default Group<T> ignore(T... args) {
+        public default Group<T> ignore(Set<? super T> set) {
+            Objects.requireNonNull(set);
+            return () -> this.values().filter(value -> !set.contains(value));
+        }
 
+        public default<E> Stream<E> eval(Function<T, Optional<E>> function) {
+            Objects.requireNonNull(function);
+            return values().flatMap(value -> function.apply(value).stream());
         }
     }
 }

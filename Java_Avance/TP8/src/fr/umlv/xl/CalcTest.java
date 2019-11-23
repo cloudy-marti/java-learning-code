@@ -348,7 +348,7 @@ public class CalcTest {
     assertThrows(NullPointerException.class, () -> Group.of("A1").ignore(null));
   }
   
-  /**
+
   // Q8
   
   @Test
@@ -404,5 +404,4 @@ public class CalcTest {
   public void testGroupEvalNull() {
     assertThrows(NullPointerException.class, () -> Group.of("A1").eval(null));
   }
-  */
 }
